@@ -32,12 +32,37 @@
       .dynamic-button.active {
         background-color: #f1f1f1;
       }
+      .dropdown {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        background-color: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        width: 125px;
+        z-index: 1000;
+        cursor: pointer;
+      }
+      .dropdown p {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: #333;
+        border-bottom: 1px solid #f0f0f0;
+      }
+      .dropdown p:last-child {
+        border-bottom: none;
+      }
+      .dropdown p:hover {
+        background-color: #f0f0f0;
+      }
     </style>
   </head>
   <body class="flex whole">
     <!-- First Sidebar -->
     <aside
-      class="bg-gray-900 text-white w-16 flex flex-col items-center p-2 full-height"
+      class="bg-gray-900 text-white w-16 flex flex-col items-center p-2 full-height hidden sm:block"
       style="padding-left: 0; padding-right: 0; flex-shrink: 0; height: 100vh"
     >
       <div style="margin-top: 130px">
@@ -191,6 +216,7 @@
             padding: 3px;
             justify-content: center;
             align-items: center;
+            position: relative;
           "
         >
           <img
@@ -204,7 +230,22 @@
             height="27px"
           />
           <p style="font-size: 12px">adeshola</p>
-          <i class="material-icons" style="font-size: 25px">arrow_drop_down</i>
+          <i
+            class="material-icons"
+            id="dropdown-toggle"
+            style="font-size: 25px; cursor: pointer"
+            >arrow_drop_down</i
+          >
+          <div id="dropdown-menu" class="dropdown">
+            <p onclick="loadPage('/pages/dashboard.html', this)">Overview</p>
+            <p
+              onclick="loadPage('/pages/inspectiontables/inspection1.html', this)"
+            >
+              Requests
+            </p>
+            <p onclick="loadPage('/pages/request-page.html', this)">Details</p>
+            <p onclick="loadPage('/pages/surveyreports.html', this)">Reports</p>
+          </div>
         </div>
       </header>
 
@@ -254,6 +295,30 @@
         externalButton.style.color = "#ffffff"; // Ensuring text color is readable
         externalButton.disabled = false; // Enable the button
       }
+
+      document
+        .getElementById("dropdown-toggle")
+        .addEventListener("click", function () {
+          var dropdown = document.getElementById("dropdown-menu");
+          if (
+            dropdown.style.display === "none" ||
+            dropdown.style.display === ""
+          ) {
+            dropdown.style.display = "block";
+          } else {
+            dropdown.style.display = "none";
+          }
+        });
+
+      // Close the dropdown if the user clicks outside of it
+      window.addEventListener("click", function (e) {
+        if (
+          !document.querySelector(".material-icons").contains(e.target) &&
+          !document.getElementById("dropdown-menu").contains(e.target)
+        ) {
+          document.getElementById("dropdown-menu").style.display = "none";
+        }
+      });
     </script>
   </body>
 </html>
