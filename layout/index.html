@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 10px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 10px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+      .full-height {
+        height: 100vh;
+      }
+      .whole {
+        color: #7a7c87;
+        font-family: "Mulish", sans-serif;
+      }
+      .dynamic-button.active {
+        background-color: #f1f1f1;
+      }
+    </style>
+  </head>
+  <body class="flex whole">
+    <!-- First Sidebar -->
+    <aside
+      class="bg-gray-900 text-white w-16 flex flex-col items-center p-2 full-height"
+      style="padding-left: 0; padding-right: 0; flex-shrink: 0; height: 100vh"
+    >
+      <div style="margin-top: 130px">
+        <button
+          onclick="loadPage('/pages/request-page.html', this)"
+          class="mb-4 p-2 hover:bg-gray-700 dynamic-button"
+          style="width: 100%"
+        >
+          <img
+            src="../assets/icons/Group 1.png"
+            alt="icon"
+            width="23px"
+            height="23px"
+            style="margin: 0 auto"
+          />
+        </button>
+        <button
+          onclick="loadPage('/pages/dashboard.html', this)"
+          id="initial-dynamic-button"
+          class="mb-4 p-2 hover:bg-gray-700 dynamic-button"
+          style="width: 100%"
+        >
+          <img
+            src="../assets/icons/Vector1.png"
+            alt="icon"
+            width="23px"
+            height="23px"
+            style="margin: 0 auto"
+          />
+        </button>
+        <button
+          onclick="loadPage('/pages/formspage.html', this)"
+          class="mb-4 p-2 hover:bg-gray-700 dynamic-button"
+          style="width: 100%"
+        >
+          <img
+            src="../assets/icons/Vector2.png"
+            alt="icon"
+            width="23px"
+            height="23px"
+            style="margin: 0 auto"
+          />
+        </button>
+        <button
+          onclick="loadPage('/pages/inspectiontables/inspection1.html', this)"
+          class="mb-4 p-2 hover:bg-gray-700 dynamic-button"
+          style="width: 100%"
+        >
+          <img
+            src="../assets/icons/Dribbble Light Preview.png"
+            alt="icon"
+            width="23px"
+            height="23px"
+            style="margin: 0 auto"
+          />
+        </button>
+        <button
+          onclick="loadPage('/pages/createinspection.html', this)"
+          class="mb-4 p-2 hover:bg-gray-700 dynamic-button"
+          style="width: 100%"
+        >
+          <img
+            src="../assets/icons/Layer 5.png"
+            alt="icon"
+            width="23px"
+            height="23px"
+            style="margin: 0 auto"
+          />
+        </button>
+        <button
+          onclick="loadPage('/pages/surveyreports.html', this)"
+          class="mb-4 p-2 hover:bg-gray-700 dynamic-button"
+          style="width: 100%"
+        >
+          <img
+            src="../assets/icons/Layer 2.png"
+            alt="icon"
+            width="23px"
+            height="23px"
+            style="margin: 0 auto"
+          />
+        </button>
+      </div>
+    </aside>
+
+    <!-- Second Sidebar -->
+    <aside
+      class="bg-white w-56 p-4 custom-scrollbar full-height hidden sm:block shadow"
+      style="height: 100vh"
+    >
+      <div class="flex items-center mb-8" style="margin-top: 40px">
+        <img
+          src="../assets/leadway-logo.png"
+          alt="Leadway Assurance"
+          class="w-[136px] h-[42px]"
+        />
+      </div>
+      <nav class="flex flex-col">
+        <button
+          onclick="loadPage('/pages/createinspection.html', this)"
+          class="mb-5 text-gray-900 hover:text-gray-700 flex items-center dynamic-button truncate"
+        >
+          <span class="ml-2" style="color: #7a7c87; font-weight: 400"
+            >TRM
+          </span>
+        </button>
+        <button
+          onclick="loadPage('/pages/dashboard.html', this)"
+          class="mb-5 text-gray-900 hover:text-gray-700 flex items-center dynamic-button truncate"
+        >
+          <img
+            src="../assets/icons/Group 126.png"
+            alt="icon"
+            width="22px"
+            height="18px"
+          />
+          <span class="ml-5" style="color: #ff7a00; font-weight: 400"
+            >Overview
+          </span>
+        </button>
+        <button
+          onclick="loadPage('/pages/inspectiontables/inspection1.html', this)"
+          class="mb-5 text-gray-900 hover:text-gray-700 flex items-center dynamic-button truncate"
+        >
+          <img
+            src="../assets/icons/Vector3.png"
+            alt="icon"
+            width="22px"
+            height="18px"
+          />
+          <span class="ml-5" style="color: #7a7c87">Requests </span>
+        </button>
+        <!-- Add more navigation items as needed -->
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <div
+      class="flex-1 flex flex-col full-height"
+      style="width: calc(100vw - 64px - 3rem)"
+    >
+      <!-- Navbar -->
+      <header
+        class="bg-white w-full h-16 flex justify-between items-center p-4 shadow"
+      >
+        <div style="width: 70px"></div>
+        <div
+          style="
+            display: flex;
+            gap: 15px;
+            padding: 3px;
+            justify-content: center;
+            align-items: center;
+          "
+        >
+          <img
+            src="../assets/icons/Group 1216.png"
+            width="24.17px"
+            height="29px"
+          />
+          <img
+            src="../assets/icons/Group 38.png"
+            width="27.19px"
+            height="27px"
+          />
+          <p style="font-size: 12px">adeshola</p>
+          <i class="material-icons" style="font-size: 25px">arrow_drop_down</i>
+        </div>
+      </header>
+
+      <!-- Content Area -->
+      <main id="content" class="flex-1 p-6 custom-scrollbar overflow-y-auto">
+        <!-- Initial content will be loaded here -->
+      </main>
+    </div>
+
+    <!-- Importing Material Icons for icons used in the sidebar -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script>
+      function loadPage(page, button) {
+        fetch(page)
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("content").innerHTML = data;
+          });
+
+        // Remove the active class from all buttons
+        document.querySelectorAll(".dynamic-button").forEach((btn) => {
+          btn.classList.remove("active");
+        });
+
+        // Add the active class to the clicked button
+        button.classList.add("active");
+      }
+
+      // Load the default page (dashboard) when the page first loads
+      document.addEventListener("DOMContentLoaded", function () {
+        loadPage(
+          "/pages/dashboard.html",
+          document.getElementById("initial-dynamic-button")
+        );
+      });
+
+      function changeStyle(div) {
+        // Toggle border color of the clicked div
+        div.style.borderColor = "#ff7a00";
+
+        // Toggle background color of the external button
+        const externalButton = document.getElementById("external-button");
+        externalButton.style.backgroundColor = "#ff7a00";
+        externalButton.style.color = "#ffffff"; // Ensuring text color is readable
+        externalButton.disabled = false; // Enable the button
+      }
+    </script>
+  </body>
+</html>

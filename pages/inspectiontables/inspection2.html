@@ -1,0 +1,140 @@
+<div class="flex flex-col p-10 gap-10 overflow-auto bg-[#FDFDFD]">
+  <div
+    class="w-full flex flex-row items-start lg:items-center justify-center gap-5 lg:items-center lg:justify-between lg:flex-row"
+  >
+    <div class="flex flex-col">
+      <h1 class="text-[#34475E] text-xl">Inspection List</h1>
+      <p class="text-[#2F2F2F] text-xs">
+        See Inspections across all business classes
+      </p>
+    </div>
+
+    <button
+      class="bg-[#FF7A00] text-white h-9 rounded-sm p-1 px-3"
+      style="background-color: #ff7a00"
+    >
+      + Create New Inspection
+    </button>
+  </div>
+
+  <div
+    class="flex flex-row lg:flex-row items-start justify-start gap-2 lg:items-center lg:justify-between"
+  >
+    <!-- slider starts -->
+    <div
+      class="p-[3px] pr-2 bg-[#f0f0f0] border border-[#eeeeee] rounded-md flex flex-row gap-2 min-w-[230px] max-w-[270px] w-full"
+      style="max-width: 354px; background-color: #eeeeee; padding-right: 0"
+    >
+      <button
+        class="border px-3 py-1 rounded-md flex-grow text-center text-sm truncate focus:bg-white focus:outline-none"
+        id="all-requests-button"
+        onclick="loadPage('/pages/inspectiontables/inspection1.html', this)"
+      >
+        All Requests
+      </button>
+      <button
+        class="border px-3 py-1 rounded-md flex-grow text-center text-sm truncate focus:bg-white focus:outline-none"
+        id="ongoing-button"
+        onclick="loadPage('/pages/inspectiontables/inspection2.html', this)"
+        style="background-color: white"
+      >
+        Ongoing
+      </button>
+      <button
+        class="border px-3 py-1 bg-[#ffffff] rounded-md flex-grow text-center text-sm truncate focus:bg-white focus:outline-none"
+        id="completed-button"
+        onclick="loadPage('/pages/inspectiontables/inspection3.html', this)"
+      >
+        Completed
+      </button>
+    </div>
+    <div
+      class="flex flex-row lg:flex-row items-start justify-center w-full gap-2 lg:items-center lg:justify-start lg:w-auto"
+    >
+      <label
+        for="search"
+        class="flex items-center justify-start p-2 border border-[#EEEEEE] bg-[#FFFFFF] rounded-sm gap-2"
+        style="width: 100%"
+      >
+        <i class="material-icons">search</i>
+        <input type="search" class="outline-none" placeholder="Search" />
+      </label>
+
+      <div
+        class="bg-[#f3f3f3] border border-[#eeeeee] rounded-md flex items-center justify-between w-full py-2 px-4"
+      >
+        <span class="rounded-full w-2 h-2 bg-[#6941c6]"></span>
+        <input type="text" class="outline-none" placeholder="🟣 Marine" />
+
+        <i class="material-icons">close</i>
+      </div>
+
+      <label
+        class="bg-[#ffffff] border border-[#eeeeee] rounded-md flex items-center justify-center w-full text-nowrap p-2"
+        style="text-wrap: nowrap"
+      >
+        Sort by:
+        <select name="sortby" id="sortby" style="background-color: transparent">
+          <option value="class">Class</option>
+        </select>
+      </label>
+    </div>
+  </div>
+
+  <div class="bg-white p-6 shadow rounded-lg sm:w-auto md:w-full lg:w-full">
+    <div class="overflow-x-auto" style="height: 550px">
+      <table class="w-full table-auto">
+        <thead>
+          <tr>
+            <th class="p-2 text-left font-semibold">ID</th>
+            <th class="p-2 text-left font-semibold">Name</th>
+            <th class="p-2 text-left font-semibold">Class</th>
+            <th class="p-2 text-left font-semibold">Inspection method</th>
+            <th class="p-2 text-left font-semibold">Officer</th>
+            <th class="p-2 text-left font-semibold">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b">
+            <td class="p-2">10321</td>
+            <td class="p-2">GIG Logistics</td>
+            <td class="p-2">Marine</td>
+            <td class="p-2">Digital</td>
+            <td class="p-2">Mustapha Onasanya</td>
+            <td class="p-2">
+              <span
+                style="
+                  color: #ff7a00;
+                  background-color: #ffdebf;
+                  width: 67px;
+                  height: 49px;
+                  padding: 4px 12px;
+                "
+                >Ongoing</span
+              >
+            </td>
+          </tr>
+          <tr class="border-b">
+            <td class="p-2">10321</td>
+            <td class="p-2">Shoprite Stores</td>
+            <td class="p-2">Property</td>
+            <td class="p-2">Manual</td>
+            <td class="p-2">Mustapha Onasanya</td>
+            <td class="p-2">
+              <span
+                style="
+                  color: #ff7a00;
+                  background-color: #ffdebf;
+                  width: 67px;
+                  height: 49px;
+                  padding: 4px 12px;
+                "
+                >Ongoing</span
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

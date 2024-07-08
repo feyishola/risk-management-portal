@@ -1,0 +1,630 @@
+<div
+  style="
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1px 0 14px 0;
+  "
+>
+  <div>
+    <h1 style="font-size: 22px">Welcome, <b>Olufemi</b></h1>
+    <p style="font-size: small">
+      Take a look at your dashboard and see all pending tasks
+    </p>
+  </div>
+  <button
+    style="
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-right: 5px;
+      background-color: #ff7a00;
+      color: white;
+      padding: 5px;
+      border: none;
+      border-radius: 3px;
+      font-size: 11px;
+      cursor: pointer;
+    "
+    onclick="loadPage('/pages/createinspection.html', this)"
+  >
+    <span class="material-icons" style="margin-right: 8px">add</span>
+    <span>Create New Inspection</span>
+  </button>
+</div>
+
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+  <!-- Inspection Cards -->
+
+  <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- card 1 -->
+    <div
+      class="text-white p-6 rounded shadow flex relative flex-col sm:w-auto"
+      style="background-color: #4a8dff; border-radius: 8px; overflow: hidden"
+    >
+      <div style="width: 100%; margin-top: 0; height: auto; z-index: 2">
+        <p style="font-weight: 500; font-size: 20px; text-align: right">
+          All Requests
+        </p>
+      </div>
+
+      <!-- Top Image -->
+      <img
+        src="../assets/blue2.png"
+        alt="blueball"
+        style="
+          position: absolute;
+          top: -10%;
+          left: 80%;
+          width: 20%;
+          height: auto;
+          z-index: 1;
+        "
+      />
+
+      <!-- Bottom Image -->
+      <img
+        src="../assets/blue1.png"
+        alt="blueball"
+        style="
+          position: absolute;
+          bottom: -10%;
+          right: 80%;
+          width: 20%;
+          height: auto;
+        "
+      />
+
+      <!-- Hand Image -->
+      <img
+        src="../assets/icons/hand.png"
+        alt="click"
+        style="
+          position: absolute;
+          bottom: 15%;
+          right: 85%;
+          width: 40px;
+          height: 39px;
+        "
+      />
+
+      <p
+        style="
+          font-weight: 700;
+          font-size: 52px;
+          text-align: right;
+          margin-top: 10%;
+        "
+      >
+        32
+      </p>
+    </div>
+    <!-- card 2 -->
+    <div
+      class="text-white p-6 rounded shadow flex relative flex-col sm:w-auto"
+      style="background-color: #00b388; border-radius: 8px; overflow: hidden"
+    >
+      <div style="width: 100%; margin-top: 0; height: auto; z-index: 2">
+        <p style="font-weight: 500; font-size: 20px; text-align: right">
+          Completed Requests
+        </p>
+      </div>
+
+      <!-- Top Image -->
+      <img
+        src="../assets/green2.png"
+        alt="greenball"
+        style="
+          position: absolute;
+          top: -10%;
+          left: 80%;
+          width: 20%;
+          height: auto;
+          z-index: 1;
+        "
+      />
+
+      <!-- Bottom Image -->
+      <img
+        src="../assets/green1.png"
+        alt="blueball"
+        style="
+          position: absolute;
+          bottom: -10%;
+          right: 80%;
+          width: 20%;
+          height: auto;
+        "
+      />
+
+      <!-- Hand Image -->
+      <img
+        src="../assets/icons/hand.png"
+        alt="click"
+        style="
+          position: absolute;
+          bottom: 15%;
+          right: 85%;
+          width: 40px;
+          height: 39px;
+        "
+      />
+
+      <p
+        style="
+          font-weight: 700;
+          font-size: 52px;
+          text-align: right;
+          margin-top: 10%;
+        "
+      >
+        114
+      </p>
+    </div>
+    <!-- card 3 -->
+
+    <div
+      class="text-white p-6 rounded shadow flex relative flex-col sm:w-auto"
+      style="background-color: #fdc75b; border-radius: 8px; overflow: hidden"
+    >
+      <div style="width: 100%; margin-top: 0; height: auto; z-index: 2">
+        <p style="font-weight: 500; font-size: 20px; text-align: right">
+          Ongoing Requests
+        </p>
+      </div>
+
+      <!-- Top Image -->
+      <img
+        src="../assets/yellow2.png"
+        alt="yellowball"
+        style="
+          position: absolute;
+          top: -10%;
+          left: 80%;
+          width: 20%;
+          height: auto;
+          z-index: 1;
+        "
+      />
+
+      <!-- Bottom Image -->
+      <img
+        src="../assets/yellow1.png"
+        alt="yellowball"
+        style="
+          position: absolute;
+          bottom: -10%;
+          right: 80%;
+          width: 20%;
+          height: auto;
+        "
+      />
+
+      <!-- Hand Image -->
+      <img
+        src="../assets/icons/hand.png"
+        alt="click"
+        style="
+          position: absolute;
+          bottom: 15%;
+          right: 85%;
+          width: 40px;
+          height: 39px;
+        "
+      />
+
+      <p
+        style="
+          font-weight: 700;
+          font-size: 52px;
+          text-align: right;
+          margin-top: 10%;
+        "
+      >
+        19
+      </p>
+    </div>
+
+    <!-- card 4 -->
+    <div
+      class="text-white p-6 rounded shadow flex relative flex-col sm:w-auto"
+      style="background-color: #e30000; border-radius: 8px; overflow: hidden"
+    >
+      <div style="width: 100%; margin-top: 0; height: auto; z-index: 2">
+        <p style="font-weight: 500; font-size: 20px; text-align: right">
+          Delayed Requests
+        </p>
+      </div>
+
+      <!-- Top Image -->
+      <img
+        src="../assets/red2.png"
+        alt="redball"
+        style="
+          position: absolute;
+          top: -10%;
+          left: 80%;
+          width: 20%;
+          height: auto;
+          z-index: 1;
+        "
+      />
+
+      <!-- Bottom Image -->
+      <img
+        src="../assets/red1.png"
+        alt="redball"
+        style="
+          position: absolute;
+          bottom: -10%;
+          right: 80%;
+          width: 20%;
+          height: auto;
+        "
+      />
+
+      <!-- Hand Image -->
+      <img
+        src="../assets/icons/hand.png"
+        alt="click"
+        style="
+          position: absolute;
+          bottom: 15%;
+          right: 85%;
+          width: 40px;
+          height: 39px;
+        "
+      />
+
+      <p
+        style="
+          font-weight: 700;
+          font-size: 52px;
+          text-align: right;
+          margin-top: 10%;
+        "
+      >
+        19
+      </p>
+    </div>
+
+    <!-- card 4 suffer-->
+    <!-- <div
+      class="text-white p-6 rounded shadow flex relative flex-col sm:w-auto"
+      style="background-color: #e30000; border-radius: 8px"
+    >
+      <div style="width: 100%; margin-top: 0; height: auto">
+        <p style="font-weight: 500; font-size: 20px; text-align: right">
+          Delayed Requests
+        </p>
+      </div>
+      
+      <div
+        style="
+          width: 20%;
+          height: auto;
+          aspect-ratio: 1/1;
+          border-radius: 50%;
+          position: absolute;
+          top: -10%;
+          left: 83%;
+          opacity: 0.5;
+          background-color: #f1f1f1;
+        "
+      ></div>
+      <div
+        style="
+          width: 20%;
+          height: auto;
+          aspect-ratio: 1/1;
+          border-radius: 50%;
+          position: absolute;
+          bottom: -3%;
+          right: 85%;
+          opacity: 0.5;
+          background-color: #f1f1f1;
+        "
+      ></div>
+      <img
+        src="../assets/icons/hand.png"
+        alt="click"
+        style="
+          position: absolute;
+          bottom: 25%;
+          right: 85%;
+          width: 39.83px;
+          height: 38.75px;
+        "
+      />
+      <p
+        style="
+          font-weight: 700px;
+          font-size: 52.26px;
+          text-align: right;
+          margin-top: 10%;
+        "
+      >
+        19
+      </p>
+    </div> -->
+  </div>
+
+  <!-- Workbench -->
+  <!-- <div class="bg-white p-6 shadow" style="border-radius: 10px"> -->
+  <div class="bg-white p-6 shadow sm:w-auto" style="border-radius: 10px">
+    <div class="flex justify-between items-center mb-4">
+      <h2 class="text-xl font-semibold">Activity</h2>
+      <!-- <a href="#" class="text-orange-500" style="font-size: 13px">view all</a> -->
+      <a
+        href="#"
+        class="text-orange-500"
+        style="
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          font-size: 13px;
+        "
+        >View all
+        <span
+          ><i class="material-icons" style="font-size: 12px">chevron_right</i>
+        </span></a
+      >
+    </div>
+    <hr />
+    <ul
+      class="space-y-2"
+      style="font-size: 13px; font-weight: 400; line-height: 16.2px"
+    >
+      <li
+        class="flex justify-between"
+        style="border-bottom: 1px solid gray; padding: 15px"
+      >
+        <span>Equilibrium Surveyors uploaded document for Claim #12323</span>
+        <a href="#" class="text-orange-500" style="color: #ff7a00">VIEW</a>
+      </li>
+      <li
+        class="flex justify-between"
+        style="border-bottom: 1px solid gray; padding: 15px"
+      >
+        <span>Adjustment report on Claim #172 from Abiola Adeniyi</span>
+        <a href="#" class="text-orange-500" style="color: #ff7a00">VIEW</a>
+      </li>
+      <li
+        class="flex justify-between"
+        style="border-bottom: 1px solid gray; padding: 15px"
+      >
+        <span>Progress report on Claim #2190 from Faseyitan Olufemi</span>
+        <a href="#" class="text-orange-500" style="color: #ff7a00">VIEW</a>
+      </li>
+      <li
+        class="flex justify-between"
+        style="border-bottom: 1px solid gray; padding: 15px"
+      >
+        <span>Inspection link request for Claim 1042</span>
+        <a href="#" class="text-orange-500" style="color: #ff7a00">VIEW</a>
+      </li>
+      <li
+        class="flex justify-between"
+        style="border-bottom: 1px solid gray; padding: 15px"
+      >
+        <span>Inspection link request for Claim 1042</span>
+        <a href="#" class="text-orange-500" style="color: #ff7a00">VIEW</a>
+      </li>
+      <!-- <li
+        class="flex justify-between"
+        style="border-bottom: 1px solid gray; padding: 15px"
+      >
+        <span>Inspection link request for Claim 1042</span>
+        <a href="#" class="text-orange-500" style="color: #ff7a00">VIEW</a>
+      </li>
+      <li
+        class="flex justify-between"
+        style="border-bottom: 1px solid gray; padding: 15px"
+      >
+        <span>Inspection link request for Claim 1042</span>
+        <a href="#" class="text-orange-500" style="color: #ff7a00">VIEW</a>
+      </li> -->
+    </ul>
+  </div>
+</div>
+<!-- All Inspections Table -->
+
+<div class="flex justify-between items-center mb-4">
+  <div style="margin-top: 40px">
+    <p>Created Inspections</p>
+  </div>
+  <div style="margin-top: 40px">
+    <a
+      href="#"
+      style="
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      "
+      >View all
+      <span
+        ><i class="material-icons" style="font-size: 12px">chevron_right</i>
+      </span></a
+    >
+  </div>
+</div>
+
+<div class="bg-white p-6 shadow rounded-lg sm:w-auto md:w-full lg:w-full">
+  <div class="overflow-x-auto" style="max-height: 300px">
+    <table class="w-full table-auto">
+      <thead>
+        <tr>
+          <th class="p-2 text-left font-semibold">ID</th>
+          <th class="p-2 text-left font-semibold">Name</th>
+          <th class="p-2 text-left font-semibold">Class</th>
+          <th class="p-2 text-left font-semibold">Inspection method</th>
+          <th class="p-2 text-left font-semibold">Officer</th>
+          <th class="p-2 text-left font-semibold">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="border-b">
+          <td class="p-2">10321</td>
+          <td class="p-2">GIG Logistics</td>
+          <td class="p-2">🔴 Marine</td>
+          <td class="p-2">Digital</td>
+          <td class="p-2">Mustapha Onasanya</td>
+          <td class="p-2">QUOTE REQUEST</td>
+        </tr>
+        <tr class="border-b">
+          <td class="p-2">10321</td>
+          <td class="p-2">Shoprite Stores</td>
+          <td class="p-2">🟠 Property</td>
+          <td class="p-2">Manual</td>
+          <td class="p-2">Mustapha Onasanya</td>
+          <td class="p-2">
+            <span
+              style="
+                color: #027a48;
+                background-color: #ecfdf3;
+                width: 87px;
+                height: 49px;
+                padding: 4px 12px;
+              "
+              >Completed</span
+            >
+          </td>
+        </tr>
+        <tr class="border-b">
+          <td class="p-2">10321</td>
+          <td class="p-2">Abiodun Abayomi</td>
+          <td class="p-2">🟡 Motors</td>
+          <td class="p-2">Digital</td>
+          <td class="p-2">Mustapha Onasanya</td>
+          <td class="p-2">
+            <span
+              style="
+                color: #ff7a00;
+                background-color: #ffdebf;
+                width: 67px;
+                height: 49px;
+                padding: 4px 12px;
+              "
+              >Ongoing</span
+            >
+          </td>
+        </tr>
+        <tr class="border-b">
+          <td class="p-2">10321</td>
+          <td class="p-2">Ben's Agro Allied</td>
+          <td class="p-2">🟢 Agric</td>
+          <td class="p-2">Manual</td>
+          <td class="p-2">Mustapha Onasanya</td>
+          <td class="p-2">SENT TO ENGINEER</td>
+        </tr>
+        <tr class="border-b">
+          <td class="p-2">10321</td>
+          <td class="p-2">Abiodun Abayomi</td>
+          <td class="p-2">🔵 Bond</td>
+          <td class="p-2">Digital</td>
+          <td class="p-2">Mustapha Onasanya</td>
+          <td class="p-2">Link expired</td>
+        </tr>
+        <tr class="border-b">
+          <td class="p-2">10321</td>
+          <td class="p-2">Julius Berger</td>
+          <td class="p-2">🟣 Engineering</td>
+          <td class="p-2">Digital</td>
+          <td class="p-2">Mustapha Onasanya</td>
+          <td class="p-2">Inspection link</td>
+        </tr>
+        <tr class="border-b">
+          <td class="p-2">10321</td>
+          <td class="p-2">Abiodun Abayomi</td>
+          <td class="p-2">🟤 Agric</td>
+          <td class="p-2">Digital</td>
+          <td class="p-2">Mustapha Onasanya</td>
+          <td class="p-2">
+            <span
+              style="
+                color: #027a48;
+                background-color: #ecfdf3;
+                width: 87px;
+                height: 49px;
+                padding: 4px 12px;
+              "
+              >Completed</span
+            >
+          </td>
+        </tr>
+        <tr class="border-b">
+          <td class="p-2">10321</td>
+          <td class="p-2">Abiodun Abayomi</td>
+          <td class="p-2">⚫ Bond</td>
+          <td class="p-2">Digital</td>
+          <td class="p-2">Mustapha Onasanya</td>
+          <td class="p-2">Link expired</td>
+        </tr>
+        <tr class="border-b">
+          <td class="p-2">10321</td>
+          <td class="p-2">Julius Berger</td>
+          <td class="p-2">🔵 Engineering</td>
+          <td class="p-2">Digital</td>
+          <td class="p-2">Mustapha Onasanya</td>
+          <td class="p-2">Inspection link</td>
+        </tr>
+        <tr class="border-b">
+          <td class="p-2">10321</td>
+          <td class="p-2">Abiodun Abayomi</td>
+          <td class="p-2">⚪ Agric</td>
+          <td class="p-2">Digital</td>
+          <td class="p-2">Mustapha Onasanya</td>
+          <td class="p-2">
+            <span
+              style="
+                color: #027a48;
+                background-color: #ecfdf3;
+                width: 87px;
+                height: 49px;
+                padding: 4px 12px;
+              "
+              >Completed</span
+            >
+          </td>
+        </tr>
+        <tr class="border-b">
+          <td class="p-2">10321</td>
+          <td class="p-2">Abiodun Abayomi</td>
+          <td class="p-2">🟣 Bond</td>
+          <td class="p-2">Digital</td>
+          <td class="p-2">Mustapha Onasanya</td>
+          <td class="p-2">Link expired</td>
+        </tr>
+        <tr class="border-b">
+          <td class="p-2">10321</td>
+          <td class="p-2">Julius Berger</td>
+          <td class="p-2">🟢 Engineering</td>
+          <td class="p-2">Digital</td>
+          <td class="p-2">Mustapha Onasanya</td>
+          <td class="p-2">Inspection link</td>
+        </tr>
+        <tr class="border-b">
+          <td class="p-2">10321</td>
+          <td class="p-2">Abiodun Abayomi</td>
+          <td class="p-2">🟤 Agric</td>
+          <td class="p-2">Digital</td>
+          <td class="p-2">Mustapha Onasanya</td>
+          <td class="p-2">
+            <span
+              style="
+                color: #ff7a00;
+                background-color: #ffdebf;
+                width: 67px;
+                height: 49px;
+                padding: 4px 12px;
+              "
+              >Ongoing</span
+            >
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

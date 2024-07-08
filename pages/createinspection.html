@@ -1,0 +1,146 @@
+<div class="flex flex-col py-5 px-10 gap-5 overflow-auto bg-[#FDFDFD]">
+  <!-- Create New Inspection Heading Container -->
+  <div class="w-full flex items-start lg:items-center justify-between gap-5">
+    <!-- Inspection List Heading Container -->
+    <div class="flex flex-col">
+      <h1 class="text-[#34475E] text-xl">Create New Inspection</h1>
+      <p class="text-[#2F2F2F] text-xs">
+        See Inspections across all business classes
+      </p>
+    </div>
+
+    <!-- <button class="bg-[#FF7A00] text-white h-9 rounded-sm p-1 px-3">
+        + Create New Inspection
+      </button> -->
+
+    <div
+      class="max-[400px]:w-[30px] max-[400px]:h-[30px] min-[400px]:w-[40px] min-[400px]:h-[auto]"
+      onclick="loadPage('/pages/dashboard.html', this)"
+      style="cursor: pointer"
+    >
+      <img src="../assets/icons/closebutton.svg" alt="close button" />
+    </div>
+  </div>
+  <div class="p-6 px-0 w-full lg:w-full h-screen bg-transparent">
+    <!-- Inspection List Area Container -->
+    <div class="flex flex-col items-center gap-[50px]">
+      <div class="flex flex-col gap-7">
+        <!-- Pre & Post Images Container -->
+        <div
+          class="flex flex-col items-center justify-center gap-6 md:flex-row"
+        >
+          <div
+            class="pre p-4 border border-gray-300 cursor-pointer w-[200px] h-[auto]"
+            onclick="changeStyle(this)"
+            style="cursor: pointer; padding: 0"
+          >
+            <img
+              src="../assets/icons/pre-lost-inspection-icon.svg"
+              alt="pre"
+              class="w-[100%] h-[auto]"
+              style="border: none"
+            />
+          </div>
+          <div
+            class="pre p-4 border border-gray-300 cursor-pointer w-[200px] h-[auto]"
+            onclick="changeStyle(this)"
+            style="cursor: pointer; padding: 0"
+          >
+            <div class="relative post" style="position: relative">
+              <img
+                src="../assets/icons/post-lost-inspection-icon.svg"
+                alt="post"
+                class="w-[200px] h-[auto]"
+              />
+              <img
+                src="../assets/icons/right-arrow.svg"
+                alt="arrow"
+                width="40px"
+                style="position: absolute; left: 20%; top: 40%"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- choose a class container -->
+        <!-- <div class="flex flex-col gap-3">
+          <label for="class">Choose a class</label>
+
+          <div
+            class="bg-[#ffffff] border border-[#eeeeee] rounded-md flex items-center justify-between w-full py-2 px-6"
+          >
+            <div class="flex justify-center gap-2 items-center">
+              <span
+                class="rounded-full w-2 h-2 bg-[#175CD3]"
+                style="border-radius: 50%; background-color: #175cd3"
+              ></span>
+              <p>Property</p>
+            </div>
+            <img src="../assets/icons/downarrow.svg" alt="f" />
+          </div>
+        </div> -->
+        <div>
+          <label class="block text-sm font-medium text-gray-700"
+            >Choose a class</label
+          >
+          <div
+            style="
+              height: 48px;
+              border: 1px solid #d0d5dd;
+              border-radius: 8px;
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+              padding: 5px;
+              margin-top: 5px;
+              gap: 5px;
+            "
+          >
+            <select
+              class="mt-1 block w-full"
+              style="background-color: transparent"
+            >
+              <option>🟣 Property</option>
+              <option>🔵 Class</option>
+              <option>🔴 Something</option>
+              <option>⚫ Everything</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Create Request Button -->
+      <!-- <button
+        class="bg-[#C3C4C6] text-white h-9 rounded-sm py-5 px-10 flex gap-3 justify-center items-center mb-[10px]"
+        style="
+          background-color: #c3c4c6;
+          color: white;
+          border-radius: 3.21px;
+          margin-top: 120px;
+        "
+      >
+        <img src="../assets/icons/createicon.svg" alt="create" /> Create Request
+      </button> -->
+      <button
+        style="
+          background-color: #c3c4c6;
+          color: white;
+          border-radius: 3.21px;
+          margin-top: 120px;
+        "
+        class="button-nude bg-gray-500 text-white py-2 px-4 rounded"
+        id="external-button"
+        onclick="loadPage('/pages/formspage.html', this)"
+        disabled
+      >
+        <img
+          src="../assets/icons/createicon.svg"
+          alt="create"
+          style="display: inline"
+        />
+        Create Request
+      </button>
+    </div>
+  </div>
+</div>
