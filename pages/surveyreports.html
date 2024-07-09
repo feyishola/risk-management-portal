@@ -77,32 +77,40 @@
   <!-- Bottom div -->
   <div
     class="flex flex-col items-start justify-start w-full border rounded-md border-[#D8D8D8] bg-[#FFFFFF]"
+    style="border: 1px solid #d8d8d8; background-color: #ffffff"
   >
     <div
       class="w-full flex items-center justify-start border-b border-b-[#F5F5F5]"
+      style="border-bottom: 1px solid#F5F5F5"
     >
       <button
         data-target="a"
         class="toggle-button text-[#9FA8AF] font-bold text-sm px-8 py-2 active"
+        style="color: #9fa8af"
+        onclick="toggleContent(event, 'a')"
       >
         Property Information
       </button>
       <button
         data-target="b"
         class="toggle-button text-[#9FA8AF] font-bold text-sm px-4 py-2"
+        style="color: #9fa8af"
+        onclick="toggleContent(event, 'b')"
       >
         Property Description
       </button>
       <button
         data-target="c"
         class="toggle-button text-[#9FA8AF] font-bold text-sm px-4 py-2"
+        style="color: #9fa8af"
+        onclick="toggleContent(event, 'c')"
       >
         Supporting Document
       </button>
     </div>
 
     <div
-      class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 px-8 py-10 content a"
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 px-8 py-10 content a"
     >
       <div class="flex flex-col">
         <p class="text-[#34475E] font-extrabold text-xs">Insured for</p>
@@ -147,100 +155,120 @@
       </div>
     </div>
 
-    <p class="px-8 py-10 text-[#585858] font-normal text-sm content b hidden">
+    <p class="px-8 py-10 text-[#585858] font-normal text-sm content b hide">
       Rovenheight homes registered as a LLC building on the 15th of May 2016 is
       a Grey and White twelve storey building located at No 12 OGUNSANYA DRIVE,
       ALCOVE ESTATE, LEKKI PHASE 1, LAGOS STATE. The property is owned by Mr.
       Badmus Akinrele who stands as the insurer of the property.
     </p>
 
-    <table class="w-full content c hidden table-auto">
-      <tr
-        class="flex items-center justify-start w-full gap-5 px-10 py-4 border-b border-b-[#F3F5F6] overflow-auto"
-      >
-        <td class="w-[100%] text-sm text-[#344755e]">
-          <p class="font-medium text-sm text-[#344755e]">Police Document</p>
-        </td>
-        <td class="w-[30%] font-medium text-sm text-[#344755e]">
-          <p
-            class="text-wrap md:text-nowrap lg:text-nowrap font-bold text-xs text-[#a7a7a7]"
-          >
-            25 Aug, 2022 9:00 AM
-          </p>
-        </td>
-        <td class="w-[10%] font-medium text-sm text-[#344755e]">
-          <button
-            class="bg-none text-[#FF7A00] flex flex-col md:flex-row lg:flex-row items-center justify-start text-xs font-bold text-center"
-          >
-            <img src="./assets/eye.svg" alt="eye" class="mr-1" />View
-          </button>
-        </td>
-        <td class="w-[10%] font-medium text-sm text-[#344755e]">
-          <button
-            class="bg-none text-[#FF7A00] flex items-center justify-start text-xs font-bold text-center"
-          >
-            Download
-          </button>
-        </td>
-      </tr>
+    <table class="w-full content c hide table-auto">
+      <tbody>
+        <tr
+          class="flex items-center justify-between w-full gap-5 px-10 py-4 border-b border-b-[#F3F5F6] overflow-auto"
+        >
+          <td class="w-full text-sm text-[#344755e]">
+            <p class="font-medium text-sm text-[#344755e]">Police Document</p>
+          </td>
+          <td class="w-1/3 flex items-center justify-end gap-4">
+            <div class="w-1/2 font-medium text-sm text-[#344755e]">
+              <p
+                class="text-wrap md:text-nowrap lg:text-nowrap font-bold text-xs text-[#a7a7a7]"
+              >
+                25 Aug, 2022 9:00 AM
+              </p>
+            </div>
+            <div class="w-1/4 font-medium text-sm text-[#344755e]">
+              <button
+                class="bg-none text-[#FF7A00] flex flex-col md:flex-row lg:flex-row items-center justify-start text-xs font-bold text-center"
+              >
+                <img
+                  src="../assets/icons/eyeicon.png"
+                  alt="eye"
+                  class="mr-1"
+                />View
+              </button>
+            </div>
+            <div class="w-1/4 font-medium text-sm text-[#344755e]">
+              <button
+                class="bg-none text-[#FF7A00] flex items-center justify-start text-xs font-bold text-center"
+              >
+                Download
+              </button>
+            </div>
+          </td>
+        </tr>
 
-      <tr
-        class="flex items-center justify-start w-full gap-5 px-10 py-4 border-b border-b-[#F3F5F6]"
-      >
-        <td class="w-[100%]">
-          <p class="font-medium text-sm text-[#344755e]">Police Report</p>
-        </td>
-        <td class="w-[30%] font-medium text-sm text-[#344755e]">
-          <p
-            class="text-wrap md:text-nowrap lg:text-nowrap font-bold text-xs text-[#a7a7a7]"
-          >
-            25 Aug, 2022 9:00 AM
-          </p>
-        </td>
-        <td class="w-[10%] font-medium text-sm text-[#344755e]">
-          <button
-            class="bg-none text-[#FF7A00] flex flex-col md:flex-row lg:flex-row items-center justify-start text-xs font-bold text-center"
-          >
-            <img src="./assets/eye.svg" alt="eye" class="mr-1" />View
-          </button>
-        </td>
-        <td class="w-[10%] font-medium text-sm text-[#344755e]">
-          <button
-            class="bg-none text-[#FF7A00] flex items-center justify-start text-xs font-bold text-center"
-          >
-            Download
-          </button>
-        </td>
-      </tr>
+        <tr
+          class="flex items-center justify-between w-full gap-5 px-10 py-4 border-b border-b-[#F3F5F6] overflow-auto"
+        >
+          <td class="w-full text-sm text-[#344755e]">
+            <p class="font-medium text-sm text-[#344755e]">Police Document</p>
+          </td>
+          <td class="w-1/3 flex items-center justify-end gap-4">
+            <div class="w-1/2 font-medium text-sm text-[#344755e]">
+              <p
+                class="text-wrap md:text-nowrap lg:text-nowrap font-bold text-xs text-[#a7a7a7]"
+              >
+                25 Aug, 2022 9:00 AM
+              </p>
+            </div>
+            <div class="w-1/4 font-medium text-sm text-[#344755e]">
+              <button
+                class="bg-none text-[#FF7A00] flex flex-col md:flex-row lg:flex-row items-center justify-start text-xs font-bold text-center"
+              >
+                <img
+                  src="../assets/icons/eyeicon.png"
+                  alt="eye"
+                  class="mr-1"
+                />View
+              </button>
+            </div>
+            <div class="w-1/4 font-medium text-sm text-[#344755e]">
+              <button
+                class="bg-none text-[#FF7A00] flex items-center justify-start text-xs font-bold text-center"
+              >
+                Download
+              </button>
+            </div>
+          </td>
+        </tr>
 
-      <tr
-        class="flex items-center justify-start w-full gap-5 px-10 py-4 border-b border-b-[#F3F5F6]"
-      >
-        <td class="w-[100%]">
-          <p class="font-medium text-sm text-[#344755e]">Attached Document 1</p>
-        </td>
-        <td class="w-[30%]">
-          <p
-            class="text-wrap md:text-nowrap lg:text-nowrap font-bold text-xs text-[#a7a7a7]"
-          >
-            25 Aug, 2022 9:00 AM
-          </p>
-        </td>
-        <td class="w-[10%]">
-          <button
-            class="bg-none text-[#FF7A00] flex flex-col md:flex-row lg:flex-row items-center justify-start text-xs font-bold text-center"
-          >
-            <img src="./assets/eye.svg" alt="eye" class="mr-1" />View
-          </button>
-        </td>
-        <td class="w-[10%]">
-          <button
-            class="bg-none text-[#FF7A00] flex items-center justify-start text-xs font-bold text-center"
-          >
-            Download
-          </button>
-        </td>
-      </tr>
+        <tr
+          class="flex items-center justify-between w-full gap-5 px-10 py-4 border-b border-b-[#F3F5F6] overflow-auto"
+        >
+          <td class="w-full text-sm text-[#344755e]">
+            <p class="font-medium text-sm text-[#344755e]">Police Document</p>
+          </td>
+          <td class="w-1/3 flex items-center justify-end gap-4">
+            <div class="w-1/2 font-medium text-sm text-[#344755e]">
+              <p
+                class="text-wrap md:text-nowrap lg:text-nowrap font-bold text-xs text-[#a7a7a7]"
+              >
+                25 Aug, 2022 9:00 AM
+              </p>
+            </div>
+            <div class="w-1/4 font-medium text-sm text-[#344755e]">
+              <button
+                class="bg-none text-[#FF7A00] flex flex-col md:flex-row lg:flex-row items-center justify-start text-xs font-bold text-center"
+              >
+                <img
+                  src="../assets/icons/eyeicon.png"
+                  alt="eye"
+                  class="mr-1"
+                />View
+              </button>
+            </div>
+            <div class="w-1/4 font-medium text-sm text-[#344755e]">
+              <button
+                class="bg-none text-[#FF7A00] flex items-center justify-start text-xs font-bold text-center"
+              >
+                Download
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
     </table>
   </div>
 </div>

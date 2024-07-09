@@ -22,7 +22,7 @@
   >
     <!-- slider starts -->
     <div
-      class="p-[3px] pr-2 bg-[#f0f0f0] border border-[#eeeeee] rounded-md flex flex-row gap-2 min-w-[230px] max-w-[270px] w-full"
+      class="p-[3px] pr-2 bg-[#f0f0f0] border border-[#eeeeee] rounded-md flex flex-row gap-2 min-w-[230px] max-w-[30%] w-full"
       style="max-width: 354px; background-color: #eeeeee; padding-right: 0"
     >
       <button
@@ -49,32 +49,34 @@
       </button>
     </div>
     <div
-      class="flex flex-row lg:flex-row items-start justify-center w-full gap-2 lg:items-center lg:justify-start lg:w-auto"
+      class="flex flex-col lg:flex-row items-start justify-center w-full gap-2 lg:items-center lg:justify-start lg:w-auto"
+      style="width: 60%"
     >
       <label
         for="search"
-        class="flex items-center justify-start p-2 border border-[#EEEEEE] bg-[#FFFFFF] rounded-sm gap-2"
-        style="width: 100%"
+        class="flex items-center justify-start p-2 border border-[#EEEEEE] bg-[#FFFFFF] rounded-sm gap-2 flex-grow"
       >
         <i class="material-icons">search</i>
-        <input type="search" class="outline-none" placeholder="Search" />
+        <input type="search" class="outline-none w-full" placeholder="Search" />
       </label>
 
       <div
-        class="bg-[#f3f3f3] border border-[#eeeeee] rounded-md flex items-center justify-between w-full py-2 px-4"
+        class="bg-[#f3f3f3] border border-[#eeeeee] rounded-md flex items-center justify-between w-full py-2 px-4 flex-grow"
       >
         <span class="rounded-full w-2 h-2 bg-[#6941c6]"></span>
-        <input type="text" class="outline-none" placeholder="🟣 Marine" />
-
+        <input
+          type="text"
+          class="outline-none w-full"
+          placeholder="🟣 Marine"
+        />
         <i class="material-icons">close</i>
       </div>
 
       <label
-        class="bg-[#ffffff] border border-[#eeeeee] rounded-md flex items-center justify-center w-full text-nowrap p-2"
-        style="text-wrap: nowrap"
+        class="bg-[#ffffff] border border-[#eeeeee] rounded-md flex items-center justify-center w-full text-nowrap p-2 flex-grow"
       >
         Sort by:
-        <select name="sortby" id="sortby" style="background-color: transparent">
+        <select name="sortby" id="sortby" class="bg-transparent">
           <option value="class">Class</option>
         </select>
       </label>
