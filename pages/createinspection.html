@@ -26,7 +26,7 @@
     <div class="flex flex-col items-center gap-[50px]">
       <div class="flex flex-col gap-7">
         <!-- Pre & Post Images Container -->
-        <div
+        <!-- <div
           class="flex flex-col items-center justify-center gap-6 md:flex-row"
         >
           <div
@@ -44,6 +44,43 @@
           <div
             class="pre p-4 border border-gray-300 cursor-pointer w-[200px] h-[auto]"
             onclick="changeStyle(this)"
+            style="cursor: pointer; padding: 0"
+          >
+            <div class="relative post" style="position: relative">
+              <img
+                src="../assets/icons/post-lost-inspection-icon.svg"
+                alt="post"
+                class="w-[200px] h-[auto]"
+              />
+              <img
+                src="../assets/icons/right-arrow.svg"
+                alt="arrow"
+                width="40px"
+                style="position: absolute; left: 20%; top: 40%"
+              />
+            </div>
+          </div>
+        </div> -->
+        <div
+          class="flex flex-col items-center justify-center gap-6 md:flex-row"
+        >
+          <div
+            class="pre p-4 border border-gray-300 cursor-pointer w-[200px] h-[auto]"
+            onclick="changeStyle(this, 'pre')"
+            style="cursor: pointer; padding: 0"
+          >
+            <div class="relative post" style="position: relative">
+              <img
+                src="../assets/icons/pre-lost-inspection-icon.svg"
+                alt="post"
+                class="w-[200px] h-[auto]"
+              />
+            </div>
+          </div>
+
+          <div
+            class="post p-4 border border-gray-300 cursor-pointer w-[200px] h-[auto]"
+            onclick="changeStyle(this, 'post')"
             style="cursor: pointer; padding: 0"
           >
             <div class="relative post" style="position: relative">
@@ -122,7 +159,8 @@
       >
         <img src="../assets/icons/createicon.svg" alt="create" /> Create Request
       </button> -->
-      <button
+
+      <!-- <button
         style="
           background-color: #c3c4c6;
           color: white;
@@ -132,6 +170,26 @@
         class="button-nude bg-gray-500 text-white py-2 px-4 rounded"
         id="external-button"
         onclick="loadPage('/pages/formspage.html', this)"
+        disabled
+      >
+        <img
+          src="../assets/icons/createicon.svg"
+          alt="create"
+          style="display: inline"
+        />
+        Create Request
+      </button> -->
+
+      <button
+        style="
+          background-color: #c3c4c6;
+          color: white;
+          border-radius: 3.21px;
+          margin-top: 120px;
+        "
+        class="button-nude bg-gray-500 text-white py-2 px-4 rounded"
+        id="external-button"
+        onclick="goToPage(this)"
         disabled
       >
         <img

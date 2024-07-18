@@ -8,6 +8,7 @@
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
     />
+    <!-- <link href="../styles/modal.css" rel="stylesheet" /> -->
     <style>
       .custom-scrollbar::-webkit-scrollbar {
         width: 10px;
@@ -58,17 +59,20 @@
         background-color: #f0f0f0;
       }
 
-      .toggle-button.active {
-        color: #000000; /* Active button color */
-        border-bottom: 1px solid #ff7a00;
-      }
-
-      .hide {
+      .content {
         display: none;
       }
-
-      .table-auto {
-        table-layout: auto;
+      .content.a,
+      .content.b,
+      .content.c {
+        display: block;
+      }
+      .hide {
+        display: none !important;
+      }
+      .toggle-button.active {
+        color: #ff7a00;
+        border-bottom: 2px solid #ff7a00;
       }
     </style>
   </head>
@@ -107,7 +111,7 @@
           />
         </button>
         <button
-          onclick="loadPage('/pages/formspage.html', this)"
+          onclick="loadPage('/pages/preform.html', this)"
           class="mb-4 p-2 hover:bg-gray-700 dynamic-button"
           style="width: 100%"
         >
@@ -298,20 +302,7 @@
         );
       });
 
-      // changeStyle handler in createinspection page starts
-
-      function changeStyle(div) {
-        // Toggle border color of the clicked div
-        div.style.borderColor = "#ff7a00";
-
-        // Toggle background color of the external button
-        const externalButton = document.getElementById("external-button");
-        externalButton.style.backgroundColor = "#ff7a00";
-        externalButton.style.color = "#ffffff"; // Ensuring text color is readable
-        externalButton.disabled = false; // Enable the button
-      }
-
-      // changeStyle handler in createinspection page ends
+      // **********************************************************************
 
       // dropdown navbar handler starts
 
@@ -340,28 +331,91 @@
       });
       // dropdown navbar handler ends
 
+      // **********************************************************************
+
       // surveyreports toggle function starts
 
       function toggleContent(event, target) {
-        // Remove active class from all buttons
-        document.querySelectorAll(".toggle-button").forEach((button) => {
-          button.classList.remove("active");
-          button.style.color = "#9FA8AF"; // Reset color
-        });
-
-        // Hide all content sections
-        document.querySelectorAll(".content").forEach((content) => {
-          content.classList.add("hide");
-        });
-
-        // Show the targeted content section
-        document.querySelector("." + target).classList.remove("hide");
-
-        // Add active class to the clicked button
+        document
+          .querySelectorAll(".content")
+          .forEach((content) => content.classList.add("hide"));
+        document.querySelector(".content." + target).classList.remove("hide");
+        document
+          .querySelectorAll(".toggle-button")
+          .forEach((button) => button.classList.remove("active"));
         event.target.classList.add("active");
-        event.target.style.color = "#ff7a00"; // Active color
       }
+
       // surveyreports toggle function ends
+
+      // **********************************************************************
+
+      // change style function starts used in createinspection.html
+
+      let selectedDiv = null;
+
+      function changeStyle(div, type) {
+        // Reset border color of all divs
+        document.querySelectorAll(".pre, .post").forEach((d) => {
+          d.style.borderColor = "gray"; // Assuming gray is the default color
+        });
+
+        // Set border color of the clicked div
+        div.style.borderColor = "#ff7a00";
+
+        // Toggle background color of the external button
+        const externalButton = document.getElementById("external-button");
+        externalButton.style.backgroundColor = "#ff7a00";
+        externalButton.style.color = "#ffffff"; // Ensuring text color is readable
+        externalButton.disabled = false; // Enable the button
+
+        // Save the selected div type
+        selectedDiv = type;
+      }
+
+      // change style function ends used in createinspection.html
+
+      // **********************************************************************
+
+      // gotoPage function starts used in createinspection.html to dynamically select url
+
+      function goToPage(button) {
+        let url = "/pages/preform.html"; // Default URL
+
+        if (selectedDiv === "pre") {
+          url = "/pages/preform.html";
+        } else if (selectedDiv === "post") {
+          url = "/pages/postform.html";
+        }
+
+        // Fetch the page content and update the content div
+        fetch(url)
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("content").innerHTML = data;
+          })
+          .catch((error) => {
+            console.error("Error fetching page:", error);
+          });
+      }
+      // gotoPage function ends used in createinspection.html to dynamically select url
+
+      function showModal() {
+        modal = document.getElementById("modal");
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
+      }
+
+      function showModal2() {
+        modal2 = document.getElementById("modal2");
+        modal = document.getElementById("modal");
+
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
+
+        modal2.classList.remove("hidden");
+        modal2.classList.add("flex");
+      }
     </script>
   </body>
 </html>

@@ -1,0 +1,66 @@
+<!-- FIRST OVERLAY -->
+<div class="modal hidden">
+  <div class="flex flex-col gap-8">
+    <div class="flex flex-col gap-[13px]">
+      <h1 class="text-[#34475E] font-semibold text-[21px]">Send to TRM</h1>
+      <p class="text-[#13px] text-[#9F9F9F]">
+        Are you sure you want to send this request?
+      </p>
+    </div>
+
+    <div class="flex justify-end gap-5 text-[14px]">
+      <button class="close-modal text-[#FF7A00]" type="button">Cancel</button>
+
+      <button
+        class="show-modal2 bg-[#FF7A00] text-white h-9 rounded-[4px] p-1 px-6"
+      >
+        <!-- <a href="./modalInspectionNotification.html">Submit</a> -->
+        Submit
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="overlay hidden"></div>
+
+<!-- SECOND OVERLAY -->
+<!-- hidden -->
+<div class="modal2 hidden">
+  <div class="flex flex-col gap-8">
+    <div class="flex flex-col gap-2">
+      <div class="close-modal2 flex justify-end cursor-pointer">
+        <img src="./assets/close-x.svg" alt="close icon" class="w-[28px]" />
+      </div>
+
+      <div class="flex flex-col items-center gap-[40px]">
+        <div class="w-[110px]">
+          <img src="./assets/handsOkay.svg" alt="" />
+        </div>
+
+        <p class="text-[13px] text-[#00B388] text-center font-[800]">
+          You've successfully created new <br />
+          Inspection ID-23321 for PRIME GARDENS
+        </p>
+      </div>
+    </div>
+
+    <div class="flex justify-center gap-3 text-[14px]">
+      <a href="./requestinspectionlist.html">
+        <button
+          class="close-modal rounded-[4px] border border-[#9FA8AF] px-3 h-9"
+          type="button"
+        >
+          Go to request list
+        </button>
+      </a>
+
+      <a href="./createNewInspection-property.html">
+        <button class="bg-[#FF7A00] text-white h-9 rounded-[4px] p-1 px-3">
+          Create new inspection
+        </button>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="overlay2 hidden"></div>
