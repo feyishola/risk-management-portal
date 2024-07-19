@@ -30,8 +30,8 @@
       > -->
     </div>
     <!-- Form -->
-    <div class="container mx-auto p-4 ">
-    <form id="postLossForm" class="bg-white shadow rounded-lg p-6 ">
+    <div class="container mx-auto p-4 custom-scrollbar rounded-lg shadow" style="height: 78vh; overflow: hidden; overflow-y: scroll; border-radius: 10px;">
+    <form id="postLossForm" class="bg-white p-6 ">
       <h2 class="text-xl font-semibold mb-4">Post-Loss Inspection - Property</h2>
       <hr />
       <div style="margin: 20px 0">
@@ -420,7 +420,6 @@
             <input type="file" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer;" />
           </div>
 
-          <!-- <div id="modal" class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center"> -->
             
              <!-- Structure for both modals -->
 <div id="modal" class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center">
@@ -429,8 +428,8 @@
     <h3 class="text-lg font-semibold text-gray-800">Send to TRM</h3>
     <p class="text-sm text-gray-600">Are you sure you want to send this request?</p>
     <div class="flex justify-end mt-8">
-      <button id="closeModal" class="text-[#FF7A00]">Cancel</button>
-      <button id="submitBtn" class="bg-[#ff7a00] text-white h-9 rounded-[4px] p-1 px-6 ml-4" style="background-color: #ff7a00;"  onclick="showModal2()">
+      <button id="closeModal" class="text-[#FF7A00]" type="button" onclick="loadPage('/pages/postform.html', this)">Cancel</button>
+      <button type="button" id="submitBtn" class="bg-[#ff7a00] text-white h-9 rounded-[4px] p-1 px-6 ml-4" style="background-color: #ff7a00;"  onclick="showModal2()">
         Submit
       </button>
     </div>
@@ -442,30 +441,30 @@
     <!-- Modal2 content -->
     <div class="flex flex-col gap-8">
       <div class="flex flex-col gap-2">
-        <div id="closeModal2" class="close-modal2 flex justify-end cursor-pointer">
-          <img src="./assets/close-x.svg" alt="close icon" class="w-[28px]" />
+        <div id="closeModal2" class="close-modal2 flex justify-end cursor-pointer" onclick="loadPage('/pages/postform.html', this)">
+          <img src="../assets/icons/closebutton.svg" alt="close button" class="w-[28px]"  />
         </div>
         <div class="flex flex-col items-center gap-y-[40px]">
           <div class="w-[110px]">
-            <img src="./assets/handsOkay.svg" alt="" />
+            <img src="../assets/leadwayhand.png" alt="" />
           </div>
-          <p class="text-[13px] text-[#00B388] text-center font-semibold">
+          <p class="text-[13px] text-[#00B388] text-center font-semibold" style="color: #00B388; ">
             You've successfully created new <br />
             Inspection ID-23321 for PRIME GARDENS
           </p>
         </div>
       </div>
       <div class="flex justify-center gap-3 text-[14px]">
-        <a href="./requestinspectionlist.html">
-          <button class="close-modal rounded-[4px] border border-[#9FA8AF] px-3 h-9" type="button">
+        
+          <button class="close-modal rounded-[4px] border border-[#9FA8AF] px-3 h-9" type="button" onclick="loadPage('/pages/inspectiontables/inspection1.html', this)">
             Go to request list
           </button>
-        </a>
-        <a href="./createNewInspection-property.html">
-          <button class="bg-[#FF7A00] text-white h-9 rounded-[4px] p-1 px-3">
+       
+        
+          <button class="bg-[#FF7A00] text-white h-9 rounded-[4px] p-1 px-3" style="background-color: #ff7a00;" onclick="loadPage('/pages/createinspection.html', this)" type="button">
             Create new inspection
           </button>
-        </a>
+       
       </div>
     </div>
   </div>
@@ -477,24 +476,10 @@
             <button id="generateBtn" type="button" onclick="showModal()" style="margin-right: 0;margin-bottom: 30px; color: white;background-color: #ff7a00; padding: 10px;">Generate</button>
           </div>
   
-          <!-- generate button -->
-        <!-- <div style="display: flex; flex-direction: row; justify-content: space-between;">
-          <div style="width: 200px;"></div>
-          
-          <button id="generateBtn" type="button"  style="margin-right: 0;margin-bottom: 30px; color: white;background-color: #ff7a00; padding: 10px;">Generate</button>
-        </div> -->
         
-      <!-- </div> -->
     </form>
     </div>
-    <!-- Modal -->
-    <!-- <div id="modal" class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center">
-      <div class="bg-white p-6 rounded-lg shadow-lg">
-        <h3 class="text-lg font-semibold">Modal Title</h3>
-        <p class="mt-4">This is a sample modal.</p>
-        <button id="closeModal" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded">Close</button>
-      </div>
-    </div> -->
+   
    
   
   </main>
