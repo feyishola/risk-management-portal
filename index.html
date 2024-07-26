@@ -55,6 +55,7 @@
                 <div class="flex justify-between">
                   <label for="password" class="text-[10px]">Password</label>
                   <span
+                    id="toggle-password"
                     class="text-[7px] text-[#EE5331] font-bold mr-[-6px] cursor-pointer"
                     >SHOW</span
                   >
@@ -135,5 +136,21 @@
         </div>
       </div>
     </main>
+    <script>
+      document
+        .getElementById("toggle-password")
+        .addEventListener("click", function () {
+          const passwordField = document.getElementById("password");
+          const toggleText = document.getElementById("toggle-password");
+
+          if (passwordField.type === "password") {
+            passwordField.type = "text";
+            toggleText.textContent = "HIDE";
+          } else {
+            passwordField.type = "password";
+            toggleText.textContent = "SHOW";
+          }
+        });
+    </script>
   </body>
 </html>
